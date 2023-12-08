@@ -1,3 +1,5 @@
+#Author: Tingwei Adeck
+#Dep: gtools
 coins_pop <- function(){
   
   tosses = readline(prompt = "Enter your number of tosses: ") #Also x = scan(); d=scan(what=double()) or  character(), what = "")
@@ -18,7 +20,9 @@ coins_pop <- function(){
 coins_population <- coins_pop()
 print(coins_population)
 
-toss_coins <- function(coins){
+#Author: Tingwei Adeck
+#Dep: gtools
+toss_coins <- function(coins, output = c('char','num')){
   library(gtools)
   
   if(length(coins) == 0){
@@ -37,10 +41,22 @@ toss_coins <- function(coins){
     n <- length(coins)
     perm_matrix <- gtools::permutations(length(toss_outcomes),n, toss_outcomes, repeats.allowed = T)
   }
-  as.data.frame(perm_matrix) 
+  
+  if( is.null(output) || 'char' %in% output){
+    
+    perm_matrix = as.data.frame(perm_matrix) 
+    return(perm_matrix)
+    
+  } else {
+    
+    perm_matrix = as.data.frame(perm_matrix) 
+    perm_matrix[perm_matrix == 'H'] <- 1
+    perm_matrix[perm_matrix == 'T'] <- 0
+    return(perm_matrix)
+  }
   
 }
 
 #call function
-coin_perms <- toss_coins(coins_pop()) #[r,c] ; col = [,i] row = [i,]
+coin_perms <- toss_coins(coins_pop())
 
