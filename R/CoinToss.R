@@ -1,5 +1,7 @@
 #' Title: Coin population.
 #'
+#' @author Tingwei Adeck
+#'
 #' @return The number of coins tossed represented by a string of Heads and Tails.
 #'
 #' @param num_coins The number of coins tossed. If NULL then the program will prompt the user.
@@ -37,6 +39,8 @@ coinsPop <- function(num_coins = NULL){
 
 
 #' Title: Coins Sampling.
+#'
+#' @author Tingwei Adeck
 #'
 #' @import gtools
 #'
@@ -116,6 +120,8 @@ tossCoins <- function(coins, output = c('char','num','list')){
 }
 
 #' Title: Probability calculator (All Heads and Tails for Now).
+#'
+#' @author Tingwei Adeck
 #'
 #' @param num_coins The number of coins tossed.
 #' @param probability The probability you intend to calculate.
