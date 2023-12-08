@@ -4,7 +4,10 @@
 \alias{coinsPop}
 \title{Title: Coin population.}
 \usage{
-coinsPop()
+coinsPop(num_coins = NULL)
+}
+\arguments{
+\item{num_coins}{The number of coins tossed. If NULL then the program will prompt the user.}
 }
 \value{
 The number of coins tossed represented by a string of Heads and Tails.
@@ -17,5 +20,5 @@ Multiple coin tosses is a situation where the population is less than the sample
 That means 2 coins (considered the population) yield 4 samples; counter intuitive right.
 }
 \examples{
-coins_population <- coinsPop()
+coins_population <- coinsPop(5)
 }

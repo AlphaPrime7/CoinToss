@@ -4,7 +4,7 @@
 \alias{tossCoins}
 \title{Title: Coins Sampling.}
 \usage{
-tossCoins(coins, output = c("char", "num"))
+tossCoins(coins, output = c("char", "num", "list"))
 }
 \arguments{
 \item{coins}{The coins population which is a no parameter subordinate function.}
@@ -21,5 +21,5 @@ Title: Coins Sampling.
 Each row represents a sample.
 }
 \examples{
-coin_perms <- tossCoins(coins_pop())
+coin_perms <- tossCoins(coinsPop(3), 'list')
 }
